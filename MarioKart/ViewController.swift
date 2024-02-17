@@ -57,8 +57,7 @@ class ViewController: UIViewController,
   // Called when the user rotates a kart
   @IBAction func didRotateKart(_ sender: UIRotationGestureRecognizer) {
     // Exercise 2: Rotate the kart
-    // Tip: Use the `rotate` function below
-    // YOUR CODE HERE
+    rotate(kart: sender.view, gestureRecognizer: sender)
   }
   
   private func rotate(kart: UIView?,
