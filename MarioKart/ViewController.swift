@@ -34,12 +34,11 @@ class ViewController: UIViewController,
   //  Called when user double-taps a kart
   @IBAction func didDoubleTapKart(_ sender: UITapGestureRecognizer) {
     // Exercise 1: Move the kart forward past the edge of the screen
-    translate(kart: sender.view, by: view.frame.width)
+      translate(kart: sender.view, by: view.frame.width) {
+          self.translate(kart: sender.view, by: -self.view.frame.width)
+      }
       
     // Exercise 6: Move the kart back to its original position after you've moved it off the screen
-    // Tip: Change your usage of the `translate` function to
-    // use the optional completion closure
-    // YOUR CODE HERE
   }
   
   private func translate(kart: UIView?,
