@@ -70,8 +70,7 @@ class ViewController: UIViewController,
   // Called when the user pinches a kart
   @IBAction func didPinchKart(_ sender: UIPinchGestureRecognizer) {
     // Exercise 3: Change the scale of the kart
-    // Tip: Use the `scale` function below
-    // YOUR CODE HERE
+      scale(kart: sender.view, gestureRecognizer: sender)
   }
   
   private func scale(kart: UIView?,
