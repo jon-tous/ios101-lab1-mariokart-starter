@@ -116,7 +116,7 @@ class ViewController: UIViewController,
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
       runStartingAnimationsOneByOne {
-          self.raceKartsWithSameSpeed()
+          self.raceKartsWithRandomizedSpeed()
       }
   }
   
@@ -159,9 +159,15 @@ class ViewController: UIViewController,
   }
   
   // Exercise 10: Have the karts race all at once to the finish line!
-  // Tip: Use the `translate` function above
   private func raceKartsWithRandomizedSpeed() {
-    // YOUR CODE HERE
+      let kartView0Speed = Double.random(in: 0.5...5)
+      translate(kart: kartView0, by: view.frame.width, animationDuration: kartView0Speed)
+      
+      let kartView1Speed = Double.random(in: 0.5...5)
+      translate(kart: kartView1, by: view.frame.width, animationDuration: kartView1Speed)
+      
+      let kartView2Speed = Double.random(in: 0.5...5)
+      translate(kart: kartView2, by: view.frame.width, animationDuration: kartView2Speed)
   }
 }
 
