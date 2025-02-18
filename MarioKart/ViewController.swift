@@ -115,7 +115,7 @@ class ViewController: UIViewController,
   // Called whenever the view becomes visible on the screen
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-      runStartingAnimationsAllAtOnce()
+      runStartingAnimationsOneByOne()
   }
   
   private func getKartReadyToRace(kart: UIImageView,
@@ -139,9 +139,14 @@ class ViewController: UIViewController,
   }
   
   // Exercise 8: Animate all karts one-by-one
-  // Tip: Use `getKartReadyToRace` and its completion closure
   private func runStartingAnimationsOneByOne(completion: (() -> Void)? = nil) {
-    // YOUR CODE HERE
+      getKartReadyToRace(kart: kartView0) {
+          self.getKartReadyToRace(kart: self.kartView1) {
+              self.getKartReadyToRace(kart: self.kartView2) {
+                  completion?()
+              }
+          }
+      }
   }
   
   // Exercise 9: Have the karts race all at once to the finish line!
